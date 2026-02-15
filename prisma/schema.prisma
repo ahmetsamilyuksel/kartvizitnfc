@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminSetting {
+  id           Int    @id @default(1)
+  currency     String @default("RUB")
+  basePriceRub Int    @default(1490)
+}
+
+model PaymentMethod {
+  id           String  @id @default(cuid())
+  name         String
+  type         String
+  active       Boolean @default(true)
+  instructions String?
+  sortOrder    Int
+  orders       Order[]
+}
+
+model Card {
+  id           String   @id @default(cuid())
+  fullName     String
+  company      String?
+  title        String?
+  phone        String?
+  email        String?
+  website      String?
+  whatsapp     String?
+  telegram     String?
+  model        String
+  color        String
+  photoDataUrl String?
+  createdAt    DateTime @default(now())
+  orders       Order[]
+}
+
+model Order {
+  id                 String        @id @default(cuid())
+  createdAt          DateTime      @default(now())
+  status             String        @default("NEW")
+  totalAmountRub     Int
+  paymentMethodId    String
+  paymentMethod      PaymentMethod @relation(fields: [paymentMethodId], references: [id])
+  cardId             String
+  card               Card          @relation(fields: [cardId], references: [id])
+  customerFullName   String
+  customerPhone      String
+  customerEmail      String?
+  shippingCountry    String
+  shippingCity       String
+  shippingAddress1   String
+  shippingAddress2   String?
+  shippingPostalCode String?
+  notes              String?
+}

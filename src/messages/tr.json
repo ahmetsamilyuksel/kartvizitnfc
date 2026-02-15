@@ -1,0 +1,92 @@
+{
+  "landing": {
+    "title": "NFC Card Studio",
+    "subtitle": "Yeni nesil premium NFC kartvizitler",
+    "description": "Dijital kartvizidinizi bir dakikada oluşturun. Tek dokunuşla iletişim bilgilerinizi paylaşın.",
+    "cta": "Kartvizit Oluştur",
+    "features": {
+      "nfc": "NFC Teknolojisi",
+      "nfcDesc": "Telefonunuza dokunarak kişilerinizi paylaşın",
+      "design": "Premium Tasarım",
+      "designDesc": "Üç benzersiz model, zarif bitiş",
+      "digital": "Dijital Profil",
+      "digitalDesc": "İletişim bilgilerinizle kişisel sayfa"
+    }
+  },
+  "create": {
+    "title": "Kartvizit Oluştur",
+    "model": "Model",
+    "color": "Renk",
+    "photo": "Fotoğraf",
+    "uploadPhoto": "Fotoğraf Yükle",
+    "changePhoto": "Fotoğrafı Değiştir",
+    "form": {
+      "fullName": "Ad Soyad",
+      "company": "Şirket",
+      "title": "Ünvan",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "website": "Web Sitesi",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    },
+    "preview": "Önizleme",
+    "next": "Sipariş Ver",
+    "models": {
+      "minimal": "Minimal",
+      "wave": "Dalga",
+      "premium": "Premium"
+    },
+    "colors": {
+      "turquoise": "Turkuaz",
+      "navy": "Lacivert",
+      "graphite": "Grafit"
+    }
+  },
+  "checkout": {
+    "title": "Sipariş",
+    "customerInfo": "Müşteri Bilgileri",
+    "shipping": "Teslimat",
+    "payment": "Ödeme",
+    "summary": "Özet",
+    "fullName": "Ad Soyad",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "country": "Ülke",
+    "city": "Şehir",
+    "address": "Adres",
+    "address2": "Adres (ek)",
+    "postalCode": "Posta Kodu",
+    "notes": "Notlar",
+    "selectPayment": "Ödeme yöntemini seçin",
+    "placeOrder": "Sipariş Ver",
+    "card": "Kartvizitiniz",
+    "total": "Toplam"
+  },
+  "success": {
+    "title": "Sipariş Oluşturuldu!",
+    "orderNumber": "Sipariş Numarası",
+    "message": "Siparişiniz için teşekkürler! Onay için sizinle iletişime geçeceğiz.",
+    "nfcLink": "Dijital Kartvizitiniz",
+    "viewCard": "Kartı Görüntüle",
+    "backHome": "Ana Sayfaya Dön"
+  },
+  "digitalCard": {
+    "addToContacts": "Kişilere Ekle",
+    "call": "Ara",
+    "whatsapp": "WhatsApp",
+    "email": "E-posta Gönder",
+    "website": "Web Sitesi",
+    "telegram": "Telegram"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "create": "Oluştur",
+    "language": "Dil"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "required": "Zorunlu alan"
+  }
+}

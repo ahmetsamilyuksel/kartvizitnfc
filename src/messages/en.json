@@ -1,0 +1,92 @@
+{
+  "landing": {
+    "title": "NFC Card Studio",
+    "subtitle": "Next-gen premium NFC business cards",
+    "description": "Create your digital business card in a minute. Share contacts with a single tap.",
+    "cta": "Create Card",
+    "features": {
+      "nfc": "NFC Technology",
+      "nfcDesc": "Share contacts with a tap of your phone",
+      "design": "Premium Design",
+      "designDesc": "Three unique models with elegant finish",
+      "digital": "Digital Profile",
+      "digitalDesc": "Personal page with your contact info"
+    }
+  },
+  "create": {
+    "title": "Create Your Card",
+    "model": "Model",
+    "color": "Color",
+    "photo": "Photo",
+    "uploadPhoto": "Upload Photo",
+    "changePhoto": "Change Photo",
+    "form": {
+      "fullName": "Full Name",
+      "company": "Company",
+      "title": "Job Title",
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Website",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    },
+    "preview": "Preview",
+    "next": "Place Order",
+    "models": {
+      "minimal": "Minimal",
+      "wave": "Wave",
+      "premium": "Premium"
+    },
+    "colors": {
+      "turquoise": "Turquoise",
+      "navy": "Navy",
+      "graphite": "Graphite"
+    }
+  },
+  "checkout": {
+    "title": "Checkout",
+    "customerInfo": "Customer Info",
+    "shipping": "Shipping",
+    "payment": "Payment",
+    "summary": "Summary",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "email": "Email",
+    "country": "Country",
+    "city": "City",
+    "address": "Address",
+    "address2": "Address Line 2",
+    "postalCode": "Postal Code",
+    "notes": "Notes",
+    "selectPayment": "Select payment method",
+    "placeOrder": "Place Order",
+    "card": "Your Card",
+    "total": "Total"
+  },
+  "success": {
+    "title": "Order Placed!",
+    "orderNumber": "Order Number",
+    "message": "Thank you for your order! We will contact you for confirmation.",
+    "nfcLink": "Your Digital Card",
+    "viewCard": "View Card",
+    "backHome": "Back to Home"
+  },
+  "digitalCard": {
+    "addToContacts": "Add to Contacts",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "email": "Send Email",
+    "website": "Website",
+    "telegram": "Telegram"
+  },
+  "nav": {
+    "home": "Home",
+    "create": "Create",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "required": "Required field"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "landing": {
+    "title": "NFC Card Studio",
+    "subtitle": "Премиальные NFC визитки нового поколения",
+    "description": "Создайте свою цифровую визитку за минуту. Поделитесь контактами одним касанием.",
+    "cta": "Создать визитку",
+    "features": {
+      "nfc": "NFC технология",
+      "nfcDesc": "Передавайте контакты одним касанием телефона",
+      "design": "Премиум дизайн",
+      "designDesc": "Три уникальных модели с элегантной отделкой",
+      "digital": "Цифровой профиль",
+      "digitalDesc": "Персональная страница с вашими контактами"
+    }
+  },
+  "create": {
+    "title": "Создайте визитку",
+    "model": "Модель",
+    "color": "Цвет",
+    "photo": "Фотография",
+    "uploadPhoto": "Загрузить фото",
+    "changePhoto": "Изменить фото",
+    "form": {
+      "fullName": "Полное имя",
+      "company": "Компания",
+      "title": "Должность",
+      "phone": "Телефон",
+      "email": "Email",
+      "website": "Веб-сайт",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    },
+    "preview": "Предпросмотр",
+    "next": "Оформить заказ",
+    "models": {
+      "minimal": "Минимал",
+      "wave": "Волна",
+      "premium": "Премиум"
+    },
+    "colors": {
+      "turquoise": "Бирюзовый",
+      "navy": "Тёмно-синий",
+      "graphite": "Графит"
+    }
+  },
+  "checkout": {
+    "title": "Оформление заказа",
+    "customerInfo": "Информация о покупателе",
+    "shipping": "Доставка",
+    "payment": "Оплата",
+    "summary": "Итого",
+    "fullName": "Полное имя",
+    "phone": "Телефон",
+    "email": "Email",
+    "country": "Страна",
+    "city": "Город",
+    "address": "Адрес",
+    "address2": "Адрес (доп.)",
+    "postalCode": "Почтовый индекс",
+    "notes": "Примечания",
+    "selectPayment": "Выберите способ оплаты",
+    "placeOrder": "Оформить заказ",
+    "card": "Ваша визитка",
+    "total": "Итого к оплате"
+  },
+  "success": {
+    "title": "Заказ оформлен!",
+    "orderNumber": "Номер заказа",
+    "message": "Спасибо за заказ! Мы свяжемся с вами для подтверждения.",
+    "nfcLink": "Ваша цифровая визитка",
+    "viewCard": "Открыть визитку",
+    "backHome": "На главную"
+  },
+  "digitalCard": {
+    "addToContacts": "Добавить в контакты",
+    "call": "Позвонить",
+    "whatsapp": "WhatsApp",
+    "email": "Написать",
+    "website": "Сайт",
+    "telegram": "Telegram"
+  },
+  "nav": {
+    "home": "Главная",
+    "create": "Создать",
+    "language": "Язык"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "required": "Обязательное поле"
+  }
+}
