@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const settings = await prisma.adminSetting.findFirst({ where: { id: 1 } });
   const paymentMethods = await prisma.paymentMethod.findMany({

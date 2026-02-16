@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getMessages } from "@/lib/i18n";
 import DigitalCardClient from "./DigitalCardClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function DigitalCardPage({
   params,
 }: {
