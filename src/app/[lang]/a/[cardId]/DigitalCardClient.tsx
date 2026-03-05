@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface CardData {
   id: string;
@@ -15,6 +15,28 @@ interface CardData {
   photoDataUrl: string | null;
   model: string;
   color: string;
+}
+
+function buildVCard(card: CardData): string {
+  const lines: string[] = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    `FN:${card.fullName}`,
+  ];
+
+  if (card.company) lines.push(`ORG:${card.company}`);
+  if (card.title) lines.push(`TITLE:${card.title}`);
+  if (card.phone) lines.push(`TEL;TYPE=CELL:${card.phone}`);
+  if (card.email) lines.push(`EMAIL:${card.email}`);
+  if (card.website) lines.push(`URL:${card.website}`);
+
+  const notes: string[] = [];
+  if (card.whatsapp) notes.push(`WhatsApp: ${card.whatsapp}`);
+  if (card.telegram) notes.push(`Telegram: ${card.telegram}`);
+  if (notes.length > 0) lines.push(`NOTE:${notes.join("\\n")}`);
+
+  lines.push("END:VCARD");
+  return lines.join("\r\n");
 }
 
 interface Props {
@@ -48,6 +70,34 @@ export default function DigitalCardClient({ card, t }: Props) {
         .then((svg: string) => setQrSvg(svg));
     });
   }, [card.id]);
+
+  const handleAddContact = useCallback(() => {
+    const vcardContent = buildVCard(card);
+
+    // Try data URI first - works best on iOS to open native contact sheet
+    // On Android, blob approach with download attribute triggers contact import
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      // iOS Safari: data URI with text/vcard opens the native "Add to Contacts" sheet
+      window.location.href =
+        "data:text/vcard;charset=utf-8," + encodeURIComponent(vcardContent);
+    } else {
+      // Android & others: create a blob and trigger via hidden anchor
+      // Using text/x-vcard for broader Android compatibility
+      const blob = new Blob([vcardContent], {
+        type: "text/x-vcard;charset=utf-8",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${card.fullName.replace(/[^a-zA-Z0-9\u0400-\u04FF\u00C0-\u024F]/g, "_")}.vcf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 3000);
+    }
+  }, [card]);
 
   const contacts = [
     card.phone && {
@@ -180,9 +230,9 @@ export default function DigitalCardClient({ card, t }: Props) {
             ))}
 
             {/* Add to Contacts CTA */}
-            <a
-              href={`/api/vcard/${card.id}`}
-              className="flex items-center justify-center gap-3 p-4 rounded-2xl font-semibold text-white transition-all duration-200 hover:scale-[1.02] shadow-lg"
+            <button
+              onClick={handleAddContact}
+              className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl font-semibold text-white transition-all duration-200 hover:scale-[1.02] shadow-lg cursor-pointer"
               style={{
                 background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
                 boxShadow: `0 8px 32px ${accent}44`,
@@ -192,7 +242,7 @@ export default function DigitalCardClient({ card, t }: Props) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
               </svg>
               {t.digitalCard.addToContacts}
-            </a>
+            </button>
           </div>
 
           {/* QR Code */}

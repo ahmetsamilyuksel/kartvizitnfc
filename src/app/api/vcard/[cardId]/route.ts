@@ -17,8 +17,8 @@ export async function GET(
 
   return new NextResponse(vcardContent, {
     headers: {
-      "Content-Type": "text/vcard; charset=utf-8",
-      "Content-Disposition": `attachment; filename="${card.fullName.replace(/[^a-zA-Z0-9]/g, "_")}.vcf"`,
+      "Content-Type": "text/x-vcard; charset=utf-8",
+      "Content-Disposition": `inline; filename="${card.fullName.replace(/[^a-zA-Z0-9]/g, "_")}.vcf"`,
     },
   });
 }
